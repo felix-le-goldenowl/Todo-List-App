@@ -1,0 +1,119 @@
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #f5f5f5;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+}
+
+header {
+  h1 {
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+    text-rendering: optimizeLegibility;
+  }
+}
+
+.new-todo {
+  text-align: center;
+  background: white;
+  margin: 0 17px;
+  input {
+    font-size: 24px;
+    padding: 16px 16px 16px 60px;
+    border: none;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+    width: 80%;
+    outline: none;
+  }
+  span {
+    position: relative;
+    right: 13px;
+    top: 4px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.todo-list {
+  background-color: white;
+  margin: 0 17px;
+  padding: 0;
+  list-style: none;
+  li {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+    padding: 16px 16px 16px 60px;
+  }
+  li:hover {
+    cursor: pointer;
+    .cancel {
+      visibility: visible;
+    }
+  }
+  .item {
+    position: relative;
+    right: 22px;
+    display: flex;
+    &-completed {
+      position: relative;
+      right: 22px;
+      display: flex;
+      .task-title {
+        color: #d9d9d9;
+        text-decoration: line-through;
+      }
+      .cancel {
+        position: relative;
+        right: 16px;
+        top: -1px;
+        visibility: hidden;
+      }
+    }
+    .cancel {
+      position: relative;
+      right: 16px;
+      top: -1px;
+      visibility: hidden;
+    }
+  }
+}
+
+.filters {
+  background-color: white;
+  margin: 0 15px;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  li {
+    display: inline;
+    color: #777;
+    padding: 10px 7px;
+    margin: inherit;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    border-color: rgba(175, 47, 47, 0.2);
+    &:hover {
+      cursor: pointer;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:active {
+        background-color: red($color: #000000);
+      }
+    }
+  }
+}

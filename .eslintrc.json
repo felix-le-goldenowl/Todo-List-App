@@ -1,0 +1,29 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", "jsx"]
+      }
+    ],
+    "prettier/prettier": ["error", {
+     "endOfLine":"auto"
+   }],
+    "max-len": ["warn", 80],
+    // "no-console": "off"
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+
+  },
+  "env": {
+    "browser": true
+  },
+  // "settings": {
+  //   "import/resolver": {
+  //     "webpack": {
+  //       "config": "./config/webpack-common-config.js"
+  //     }
+  //   }
+  // }
+}
