@@ -7,6 +7,9 @@ const TodoItem = ({ task, handleRemove, handleComplete }) => {
     <li>
       <div className={`item${completed ? `-completed` : ``}`}>
         <span
+          role="button"
+          tabIndex="0"
+          onKeyDown={() => {}}
           className="material-icons cancel"
           onClick={() => handleRemove(id)}
         >
@@ -25,9 +28,9 @@ const TodoItem = ({ task, handleRemove, handleComplete }) => {
 };
 
 TodoItem.propTypes = {
-  task: PropTypes.object,
-  handleRemove: PropTypes.func,
-  handleComplete: PropTypes.func,
+  task: PropTypes.instanceOf(Object).isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleComplete: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

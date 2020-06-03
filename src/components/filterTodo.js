@@ -4,13 +4,25 @@ import PropTypes from 'prop-types';
 const FilterTodo = ({ handleFilter }) => {
   return (
     <ul className="filters">
-      <li onClick={() => handleFilter('all')}>
+      <li
+        role="presentation"
+        onClick={() => handleFilter('all')}
+        onKeyPress={() => {}}
+      >
         <a href="/#">All</a>
       </li>
-      <li onClick={() => handleFilter('active')}>
+      <li
+        role="presentation"
+        onClick={() => handleFilter('active')}
+        onKeyDown={() => {}}
+      >
         <a href="/#">Active</a>
       </li>
-      <li onClick={() => handleFilter('completed')}>
+      <li
+        role="presentation"
+        onClick={() => handleFilter('completed')}
+        onKeyDown={() => {}}
+      >
         <a href="/#">Completed</a>
       </li>
     </ul>
@@ -18,7 +30,7 @@ const FilterTodo = ({ handleFilter }) => {
 };
 
 FilterTodo.propTypes = {
-  handleFilter: PropTypes.func,
+  handleFilter: PropTypes.func.isRequired,
 };
 
 export default FilterTodo;

@@ -12,13 +12,13 @@
      "endOfLine":"auto"
    }],
     "max-len": ["warn", 80],
-    // "no-console": "off"
+    "no-console": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
 
   },
   "env": {
     "browser": true
-  },
+  }
   // "settings": {
   //   "import/resolver": {
   //     "webpack": {

@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint no-param-reassign: "error" */
+
 import React, { useState, useEffect } from 'react';
+import _ from 'lodash';
 import NewTodo from './components/newTodo';
 import TodoList from './components/todoList';
 import FilterTodo from './components/filterTodo';
-import _ from 'lodash';
 import './Styles.scss';
 
 const App = () => {
@@ -21,7 +24,7 @@ const App = () => {
   };
 
   const handleChange = (e) => {
-    let newTask = {
+    const newTask = {
       id: Math.floor(Math.random() * 1000),
       title: e.target.value,
       completed: false,
