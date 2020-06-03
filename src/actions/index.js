@@ -8,11 +8,9 @@ import {
   TOGGLE_ALL_TODO,
 } from '../constants';
 
-let nextTodoId = 0;
-
 export const addTodo = (title) => ({
   type: ADD_TODO,
-  id: nextTodoId++,
+  id: Math.floor(Math.random() * 1000),
   title,
 });
 

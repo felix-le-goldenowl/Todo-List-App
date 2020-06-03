@@ -7,14 +7,10 @@ import {
   TOGGLE_ALL_TODO,
 } from '../constants';
 
-const initialState = localStorage.getItem('todos')
-  ? JSON.parse(localStorage.getItem('todos'))
-  : [];
-
-const todos = (state = initialState, action) => {
+const todos = (state = [], action) => {
   switch (action.type) {
-    case ADD_TODO: {
-      const newTodos = [
+    case ADD_TODO:
+      return [
         ...state,
         {
           id: action.id,
@@ -22,27 +18,16 @@ const todos = (state = initialState, action) => {
           completed: false,
         },
       ];
-      localStorage.setItem('todos', JSON.stringify(newTodos));
-      return newTodos;
-    }
-    case TOGGLE_TODO: {
-      const newTodos = state.map((todo) =>
+    case TOGGLE_TODO:
+      return state.map((todo) =>
         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo,
       );
-      localStorage.setItem('todos', JSON.stringify(newTodos));
-      return newTodos;
-    }
-    case REMOVE_TODO: {
+    case REMOVE_TODO:
       const stateClone = _.cloneDeep(state);
       _.remove(stateClone, (todo) => todo.id === action.id);
-      localStorage.setItem('todos', JSON.stringify(stateClone));
       return stateClone;
-    }
-    case TOGGLE_ALL_TODO: {
-      const newTodos = state.map((todo) => ({ ...todo, completed: true }));
-      localStorage.setItem('todos', JSON.stringify(newTodos));
-      return newTodos;
-    }
+    case TOGGLE_ALL_TODO:
+      return state.map((todo) => ({ ...todo, completed: true }));
     default:
       return state;
   }
