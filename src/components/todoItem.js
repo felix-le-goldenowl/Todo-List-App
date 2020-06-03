@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoItem = ({ task, handleRemove, handleComplete }) => {
-  const { completed, id } = task;
+const TodoItem = ({ todo, handleRemove, handleComplete }) => {
+  const { completed, id } = todo;
   return (
     <li>
       <div className={`item${completed ? `-completed` : ``}`}>
@@ -15,7 +15,7 @@ const TodoItem = ({ task, handleRemove, handleComplete }) => {
         >
           cancel
         </span>
-        <span className="task-title">{task.title}</span>
+        <span className="task-title">{todo.title}</span>
       </div>
       <input
         checked={completed}
@@ -28,7 +28,7 @@ const TodoItem = ({ task, handleRemove, handleComplete }) => {
 };
 
 TodoItem.propTypes = {
-  task: PropTypes.instanceOf(Object).isRequired,
+  todo: PropTypes.instanceOf(Object).isRequired,
   handleRemove: PropTypes.func.isRequired,
   handleComplete: PropTypes.func.isRequired,
 };
