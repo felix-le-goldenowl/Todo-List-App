@@ -1,7 +1,8 @@
+/* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
-import { toggleTodo, removeTodo } from '../actions';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants';
-import TodoList from '../components/todoList';
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from 'constants';
+import TodoList from 'components/todoList';
+import { toggleTodo, removeTodo } from 'actions';
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {

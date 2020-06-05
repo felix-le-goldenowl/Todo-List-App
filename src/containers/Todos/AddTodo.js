@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-return-assign */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodo, toggleAllTodo } from '../actions';
+import { addTodo, toggleAllTodo } from 'actions';
 
 const NewTodo = ({ onAddTodo, onToggleAllTodo, todos }) => {
   const [input, setInput] = useState('');

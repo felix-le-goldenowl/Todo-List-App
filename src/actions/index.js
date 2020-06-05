@@ -1,12 +1,11 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-plusplus */
 import {
   ADD_TODO,
   TOGGLE_TODO,
   REMOVE_TODO,
   SET_VISIBILITY_FILTER,
   TOGGLE_ALL_TODO,
-} from '../constants';
+  LOGIN,
+} from 'constants';
 
 export const addTodo = (title) => ({
   type: ADD_TODO,
@@ -31,4 +30,10 @@ export const toggleAllTodo = () => ({
 export const setVisibilityFilter = (filter) => ({
   type: SET_VISIBILITY_FILTER,
   filter,
+});
+
+export const login = (email, password) => ({
+  type: LOGIN,
+  email,
+  password,
 });

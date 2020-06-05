@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../actions';
-import FilterItem from '../components/filterItem';
+import { setVisibilityFilter } from 'actions';
+import FilterItem from 'components/filterItem';
 
 const mapStateToProps = (state, ownProps) => ({
   active: ownProps.filter === state.visibilityFilter,

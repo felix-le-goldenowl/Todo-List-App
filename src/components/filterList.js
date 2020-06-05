@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants';
-import Filter from '../containers/Filter';
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from 'constants';
+import Filter from 'containers/Todos/Filter';
 
 const FilterList = () => {
   return (
